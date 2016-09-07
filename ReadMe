@@ -1,1 +1,20 @@
 
+
+Install Cassandra in MAC
+
+
+1. Download and install the apache cassandra from the below site
+http://www.datastax.com/2012/01/working-with-apache-cassandra-on-mac-os-x
+
+2. Create a keyspace to store the  to store some example data objects.
+
+$ cqlsh> create keyspace dev
+... with replication = {'class':'SimpleStrategy','replication_factor':1};
+
+
+Let’s create a base table to hold employee data:
+$ cqlsh> use dev;
+$ cqlsh:dev> create table emp (empid int primary key,
+... emp_first varchar, emp_last varchar, emp_dept varchar);
+cqlsh:dev>
+
